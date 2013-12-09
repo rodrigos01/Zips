@@ -1,0 +1,28 @@
+Zips\Bundle\MainBundle\Entity\Ambientes:
+    type: entity
+    table: Ambientes
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nome:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+    manyToMany:
+        idsite:
+            targetEntity: Sites
+            cascade: {  }
+            mappedBy: idambiente
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

@@ -1,0 +1,41 @@
+Zips\Bundle\MainBundle\Entity\Areas:
+    type: entity
+    table: Areas
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nome:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+        home:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+    manyToMany:
+        idgrupo:
+            targetEntity: Grupos
+            cascade: {  }
+            mappedBy: idarea
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+        idusuario:
+            targetEntity: Usuarios
+            cascade: {  }
+            mappedBy: idarea
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

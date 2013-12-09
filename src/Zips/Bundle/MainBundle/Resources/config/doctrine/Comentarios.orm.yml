@@ -1,0 +1,52 @@
+Zips\Bundle\MainBundle\Entity\Comentarios:
+    type: entity
+    table: Comentarios
+    indexes:
+        idPacote:
+            columns:
+                - idPacote
+        idUsuario:
+            columns:
+                - idUsuario
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        texto:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        datapostado:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: dataPostado
+    manyToOne:
+        idpacote:
+            targetEntity: Pacotes
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPacote:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idusuario:
+            targetEntity: Usuarios
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idUsuario:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

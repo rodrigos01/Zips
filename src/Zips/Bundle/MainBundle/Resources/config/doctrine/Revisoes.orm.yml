@@ -1,0 +1,51 @@
+Zips\Bundle\MainBundle\Entity\Revisoes:
+    type: entity
+    table: Revisoes
+    indexes:
+        postadoPor:
+            columns:
+                - postadoPor
+        IDX_9718F7B6130A7D0:
+            columns:
+                - idPacote
+    id:
+        datapostado:
+            type: datetime
+            nullable: false
+            comment: ''
+            id: true
+            column: dataPostado
+    fields:
+        filename:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        descricao:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+    oneToOne:
+        idpacote:
+            targetEntity: Pacotes
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPacote:
+                    referencedColumnName: id
+            orphanRemoval: false
+    manyToOne:
+        postadopor:
+            targetEntity: Usuarios
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                postadoPor:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

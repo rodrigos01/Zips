@@ -1,0 +1,74 @@
+Zips\Bundle\MainBundle\Entity\Pacotes:
+    type: entity
+    table: Pacotes
+    indexes:
+        criadoPor:
+            columns:
+                - criadoPor
+        idSite:
+            columns:
+                - idSite
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        idprojeto:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: idProjeto
+        idtarefa:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: idTarefa
+        nome:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        datacriacao:
+            type: datetime
+            nullable: true
+            comment: ''
+            column: dataCriacao
+        revisaosolicitada:
+            type: boolean
+            nullable: true
+            comment: ''
+            default: '0'
+            column: revisaoSolicitada
+        finalizado:
+            type: boolean
+            nullable: true
+            comment: ''
+            default: '0'
+    manyToOne:
+        criadopor:
+            targetEntity: Usuarios
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                criadoPor:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idsite:
+            targetEntity: Sites
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idSite:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

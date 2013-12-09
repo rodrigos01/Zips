@@ -1,0 +1,26 @@
+Zips\Bundle\MainBundle\Entity\Paginasbloqueadas:
+    type: entity
+    table: PaginasBloqueadas
+    indexes:
+        idUsuario:
+            columns:
+                - idUsuario
+    id:
+        nome:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            id: true
+    oneToOne:
+        idusuario:
+            targetEntity: Usuarios
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idUsuario:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

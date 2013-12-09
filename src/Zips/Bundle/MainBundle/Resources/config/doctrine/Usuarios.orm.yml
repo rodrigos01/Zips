@@ -1,0 +1,108 @@
+Zips\Bundle\MainBundle\Entity\Usuarios:
+    type: entity
+    table: Usuarios
+    indexes:
+        defaultArea:
+            columns:
+                - defaultArea
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        login:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        senha:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        firstlogin:
+            type: boolean
+            nullable: true
+            comment: ''
+            column: firstLogin
+        wizardstep:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: wizardStep
+        needpasswdchange:
+            type: boolean
+            nullable: true
+            comment: ''
+            column: needPasswdChange
+        nome:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        email:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        apikey:
+            type: string
+            nullable: true
+            length: 43
+            fixed: true
+            comment: ''
+            column: apiKey
+    manyToOne:
+        defaultarea:
+            targetEntity: Areas
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                defaultArea:
+                    referencedColumnName: id
+            orphanRemoval: false
+    manyToMany:
+        idarea:
+            targetEntity: Areas
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idusuario
+            joinTable:
+                name: usuarios_areas
+                joinColumns:
+                    -
+                        name: idUsuario
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: idArea
+                        referencedColumnName: id
+            orderBy: null
+        idgrupo:
+            targetEntity: Grupos
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idusuario
+            joinTable:
+                name: usuarios_grupos
+                joinColumns:
+                    -
+                        name: idUsuario
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: idGrupo
+                        referencedColumnName: id
+            orderBy: null
+    lifecycleCallbacks: {  }

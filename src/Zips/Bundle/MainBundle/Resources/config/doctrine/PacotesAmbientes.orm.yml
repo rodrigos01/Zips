@@ -1,0 +1,77 @@
+Zips\Bundle\MainBundle\Entity\PacotesAmbientes:
+    type: entity
+    table: Pacotes_Ambientes
+    indexes:
+        idAmbiente:
+            columns:
+                - idAmbiente
+        aprovadoPor:
+            columns:
+                - aprovadoPor
+        upadoPor:
+            columns:
+                - upadoPor
+        IDX_C13847CF6130A7D0:
+            columns:
+                - idPacote
+    id: {  }
+    fields:
+        aprovado:
+            type: boolean
+            nullable: true
+            comment: ''
+        dataaprovado:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: dataAprovado
+        upado:
+            type: boolean
+            nullable: true
+            comment: ''
+        dataupado:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: '0000-00-00 00:00:00'
+            column: dataUpado
+    oneToOne:
+        idpacote:
+            targetEntity: Pacotes
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPacote:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idambiente:
+            targetEntity: Ambientes
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idAmbiente:
+                    referencedColumnName: id
+            orphanRemoval: false
+    manyToOne:
+        aprovadopor:
+            targetEntity: Usuarios
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                aprovadoPor:
+                    referencedColumnName: id
+            orphanRemoval: false
+        upadopor:
+            targetEntity: Usuarios
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                upadoPor:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

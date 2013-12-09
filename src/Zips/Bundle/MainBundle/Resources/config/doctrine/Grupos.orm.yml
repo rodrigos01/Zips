@@ -1,0 +1,58 @@
+Zips\Bundle\MainBundle\Entity\Grupos:
+    type: entity
+    table: Grupos
+    indexes:
+        defaultArea:
+            columns:
+                - defaultArea
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nome:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+    manyToOne:
+        defaultarea:
+            targetEntity: Areas
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                defaultArea:
+                    referencedColumnName: id
+            orphanRemoval: false
+    manyToMany:
+        idarea:
+            targetEntity: Areas
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idgrupo
+            joinTable:
+                name: grupos_areas
+                joinColumns:
+                    -
+                        name: idGrupo
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: idArea
+                        referencedColumnName: id
+            orderBy: null
+        idusuario:
+            targetEntity: Usuarios
+            cascade: {  }
+            mappedBy: idgrupo
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }
