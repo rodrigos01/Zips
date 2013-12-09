@@ -1,0 +1,3 @@
+zips_main_homepage:
+    pattern:  /
+    defaults: { _controller: ZipsMainBundle:Default:index }

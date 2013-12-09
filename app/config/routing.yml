@@ -1,0 +1,4 @@
+zips_main:
+    resource: "@ZipsMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
