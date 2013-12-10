@@ -26,6 +26,10 @@
 
 @import "compass";
 @import "compass/reset";
+@import "compass/utilities/sprites";
+
+@import "icons/*.png";
+@include all-icons-sprites;
 
 @import "functions/all";
 
@@ -36,4 +40,4 @@
 @import "ui/all";
 @import "shame";
 
-@import "custom";
+@import "general";

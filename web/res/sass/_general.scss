@@ -1,0 +1,26 @@
+// Your custom SCSS should be written here...
+
+.clearfix {
+  clear: both;
+}
+
+header {
+  height: 50px;
+  width:  100%;
+  background-color: #1A1A1A;
+  padding: 7.5px;
+  padding-left: 0;
+  
+  .logoBox {
+    padding-left: 7.5px;
+    float: left;
+    
+    a {
+      width: 35px;
+      height: 35px;
+      display: block;
+    }
+    
+  }
+  
+}

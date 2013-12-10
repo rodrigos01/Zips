@@ -2,12 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Zips{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset(cssPath ~ 'main.css') }}"
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+      <header>
+        <div class="logoBox">
+          <a href="/" class="icons-logo35"></a>
+        </div>
+        <div class="clearfix"></div>
+      </header>
+      {% block body %}{% endblock %}
+      {% block javascripts %}
+        <script src="{{ asset(jsPath ~ 'main.js') }}"
+      {% endblock %}
     </body>
 </html>

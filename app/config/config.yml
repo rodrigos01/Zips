@@ -28,6 +28,9 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+      jsPath:         "%resPath%js/"
+      cssPath:         "%resPath%css/"
 
 # Assetic Configuration
 assetic:
