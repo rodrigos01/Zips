@@ -30,8 +30,10 @@
 
 @import "icons/*.png";
 @import "buttons/*.png";
+@import "misc/*.png";
 @include all-icons-sprites;
 @include all-buttons-sprites;
+@include all-misc-sprites;
 
 @import "functions/all";
 
