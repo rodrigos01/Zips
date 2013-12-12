@@ -29,7 +29,9 @@
 @import "compass/utilities/sprites";
 
 @import "icons/*.png";
+@import "buttons/*.png";
 @include all-icons-sprites;
+@include all-buttons-sprites;
 
 @import "functions/all";
 

@@ -7,17 +7,62 @@
         <link rel="stylesheet" href="{{ asset(cssPath ~ 'main.css') }}"
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block metatags %}
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="mobile-web-app-capable" content="yes">
+        {% endblock %}
+        <link rel="shortcut icon" sizes="196x196" href="touchicon_highres.png">
+        <link rel="shortcut icon" sizes="128x128" href="touchicon.png">
+        <link rel="apple-touch-icon" sizes="128x128" href="touchicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="128x128" href="touchicon.png">
     </head>
     <body>
       <header>
         <div class="logoBox">
-          <a href="/" class="icons-logo35"></a>
+          <a href="/" class="homebutton toggle" title="Home" gumby-trigger=".sideMenuTrigger">
+            <img src="{{ asset(imgPath ~ 'homebutton.png') }}" gumby-retina alt="logo" />
+          </a>
+        </div>
+        <div class="search">
+          <a href="#" gumby-trigger="#searchBox" class="toggle buttons-search" title="Pesquisar"></a>
+        </div>
+        <div class="context">
+          {% block context %}{% endblock %}
+          <div id="searchBox">
+            <input type="text" name="searchqueue" placeholder="Digite o nome do zip, projeto ou tarefa"/>
+          </div>
         </div>
         <div class="clearfix"></div>
       </header>
+      <div class="sideMenuTrigger" id="backblock"></div>
+      <div class="sideMenuTrigger" id="sideMenu">
+        <ul>
+          {% block sideMenu %}
+          <li>
+            <a href="{{ asset('opened') }}">Abertos</a>
+          </li>
+          <li>
+            <a href="{{ asset('closed') }}">Finalizados</a>
+          </li>
+          <li>
+            <a href="{{ asset('myZips') }}">Meus Zips</a>
+          </li>
+          {% endblock %}
+          <li>
+            <a href="{{ asset('configurations') }}">Configurações</a>
+          </li>
+          <li>
+            <a href="{{ asset('logout') }}">Sair</a>
+          </li>
+        </ul>
+      </div>
+      <div id="content">
       {% block body %}{% endblock %}
+      </div>
       {% block javascripts %}
-        <script src="{{ asset(jsPath ~ 'main.js') }}"
+        <script type="text/javascript" src="{{ asset(jsPath ~ 'libs/jquery-2.0.2.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset(jsPath ~ 'libs/modernizr-2.6.2.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset(jsPath ~ 'libs/gumby.min.js') }}"></script>
       {% endblock %}
     </body>
 </html>

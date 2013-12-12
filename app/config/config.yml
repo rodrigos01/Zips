@@ -31,6 +31,7 @@ twig:
     globals:
       jsPath:         "%resPath%js/"
       cssPath:         "%resPath%css/"
+      imgPath:         "%resPath%img/"
 
 # Assetic Configuration
 assetic:
