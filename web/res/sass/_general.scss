@@ -51,16 +51,17 @@ header {
   .context {
     position: relative;
     margin: 0 50px;
+    overflow: hidden;
     
     #searchBox {
       position: absolute;
-      top: -100%;
-      left: 0;
+      top: 0;
+      right: -100%;
       width: 100%;
       height: 35px;
       background-color: #1A1A1A;
-      transition: top 0.2s;
-      -webkit-transition: top 0.2s ; /* Safari */
+      transition: right 0.2s;
+      -webkit-transition: right 0.2s;
       
       input[type=text] {
         border: none;
@@ -79,7 +80,7 @@ header {
     }
     
     #searchBox.active {
-      top: 0;
+      right: 0;
     }
     
     .actionMenu {
