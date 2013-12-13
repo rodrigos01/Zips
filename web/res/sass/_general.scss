@@ -123,11 +123,20 @@ header {
   ul {
     
     li {
-      padding: 0.5em 1em;
+      padding: 0;
       
       a {
         color: #b3b3b3;
+        display: block;
+        padding: 0.5em 1em;
+        transition: background-color 0.5s;
+        -webkit-transition: background-color 0.5s;
       }
+      
+      a:hover {
+        background-color: #1A1A1A;
+      }
+      
     }
   }
   

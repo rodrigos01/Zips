@@ -1719,8 +1719,9 @@ header .search { float: right; }
 #backblock { background-color: #000000; position: absolute; height: 0; width: 100%; opacity: 0; padding-top: 50px; transition: opacity 0.2s; -webkit-transition: opacity 0.2s; /* Safari */ }
 
 #sideMenu { background-color: #2a2a2a; width: 220px; font-size: 20px; padding-top: 50px; height: 100%; position: absolute; }
-#sideMenu ul li { padding: 0.5em 1em; }
-#sideMenu ul li a { color: #b3b3b3; }
+#sideMenu ul li { padding: 0; }
+#sideMenu ul li a { color: #b3b3b3; display: block; padding: 0.5em 1em; transition: background-color 0.5s; -webkit-transition: background-color 0.5s; }
+#sideMenu ul li a:hover { background-color: #1A1A1A; }
 
 #content { padding-top: 50px; margin-left: 220px; }
 
