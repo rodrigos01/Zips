@@ -15,17 +15,35 @@
 {% block body %}
   
   {% for zip in zipList %}
-    <div class="zipBox">
+    <div class="zipBox toggle" id="zip{{ zip.id }}" gumby-trigger="#zip{{ zip.id }} .zipMenu" gumby-on="mouseover mouseout">
       <div class="zipdate">{{ zip.data }}</div>
-      <div class="check"><div class="checkBall"></div></div>
+      <div class="check"><a href="#" class="checkBall toggle" gumby-trigger="#zip{{ zip.id }} .checkBall" ></a></div>
       <div class="zipMain">
-        <a href="{{ zip.id }}" class="zipNome">{{ zip.nome }}</a>
+        <a href="{{ zip.id }}" class="zipNome fittext" gumby-rate="0.5" gumby-sizes="14|80">{{ zip.nome }}</a>
         <div class="zipFooter">
-          <span>{{ zip.status }}</span><span>{{ zip.ambienteAtual }} &gt; {{ zip.proximoAmbiente }}</span><span>{{ zip.site }}</span>
+          <span>
+            {% if zip.finalizado %}
+              Finalizado
+            {% elseif zip.revisaoSolicitada %}
+              Revisão Solicitada
+            {% elseif zip.aprovado %}
+              Aprovado em {{ zip.atual }}
+            {% else %}
+              Aguardando Aprovação
+            {% endif %}
+          </span>
+          <span>{{ zip.atual }} &gt; 
+            {% if zip.proximo == zip.atual %} 
+              nenhum 
+            {% else %} 
+              {{ zip.proximo }} 
+            {% endif %}
+          </span>
+          <span>{{ zip.site }}</span>
         </div>
       </div>
-      <div class="clear"></div>
-      <ul class="zipMenu" style="display: none;">
+      <div class="clearfix"></div>
+      <ul class="zipMenu">
         <li><a href="Main/Download" class="button" onclick="Display.loadView('Main/Download', [{{ zip.id }}])">Download</a></li>
         <li><a href="Desenvolvedores/EditarZip" class="button" onclick="">Editar Zip</a></li>
         <li><a href="Desenvolvedores/EnviarRevisao" class="button" onclick="">Enviar Revisão</a></li>

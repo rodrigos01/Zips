@@ -13,7 +13,7 @@ header {
   border-bottom: #7a7a7a 3px solid;
   position: fixed;
   z-index: 2;
-  
+
   a {
     width: 35px;
     height: 35px;
@@ -21,24 +21,24 @@ header {
     margin: 0 7.5px;
     border-radius: 10px;
   }
-  
+
   a:active {
     width: 34px;
     height: 34px;
   }
-  
+
   a.buttons-add {
     background-color: #9acd32;
   }
-  
+
   a.buttons-search {
     background-color: #87ceef;
   }
-  
+
   .logoBox {
     padding-left: 7.5px;
     float: left;
-    
+
     a {
       margin-left: 0;
       background-size: 0px;
@@ -47,19 +47,19 @@ header {
       -webkit-transition: background-position-x 0.2s ; /* Safari */
     }
   }
-  
+
   .title {
     float: left;
     color: #fffaff;
     font-size: 28px;
   }
-  
+
   .context {
     position: relative;
     margin: 0 50px;
     overflow: hidden;
     height: 35px;
-    
+
     #searchBox {
       position: absolute;
       top: 0;
@@ -69,7 +69,7 @@ header {
       background-color: #1A1A1A;
       transition: right 0.2s;
       -webkit-transition: right 0.2s;
-      
+
       input[type=text] {
         border: none;
         border-bottom: #87ceef solid 1px;
@@ -78,34 +78,34 @@ header {
         font-size: 24px;
         width: 100%;
       }
-      
+
       input[type=text]:focus {
         outline-offset: 0;
         outline: none;
       }
-      
+
     }
-    
+
     #searchBox.active {
       right: 0;
     }
-    
+
     .actionMenu {
       list-style: none;
       text-align: right;
-      
+
       li {
         display: inline-block;
       }
-      
+
     }
-    
+
   }
-  
+
   .search {
     float: right;
   }
-  
+
 }
 
 #backblock {
@@ -117,6 +117,7 @@ header {
   padding-top: 50px;
   transition: opacity 0.2s;
   -webkit-transition: opacity 0.2s ; /* Safari */
+  z-index: 1;
 }
 
 #sideMenu {
@@ -126,12 +127,13 @@ header {
   padding-top: 50px;
   height: 100%;
   position: fixed;
-  
+  z-index: 1;
+
   ul {
-    
+
     li {
       padding: 0;
-      
+
       a {
         color: #b3b3b3;
         display: block;
@@ -139,66 +141,164 @@ header {
         transition: background-color 0.5s, color 0.5s;
         -webkit-transition: background-color 0.5s, color 0.5s;
       }
-      
+
       a:hover {
         background-color: #1A1A1A;
         color: #fffaff
       }
-      
+
       a.active {
         color: #9ACD32
       }
-      
+
     }
   }
-  
+
 }
 
 #content {
   padding-top: 50px;
   margin-left: 220px;
+
+  .zipBox {
+    background-color: #76b1b9;
+    cursor: pointer;
+    border-radius: 10px;    
+    position: relative;
+    max-width: 880px;
+    margin: 1em;
+    overflow: hidden;
+
+    .zipdate {
+      color: #CCC;
+      font-size: 9px;
+      padding: 0.5em;
+    }
+
+    .check {
+      font-size: 40px;
+      padding: 7.5px;
+      float: left;
+
+      .checkBall {
+        background-color: #FFFFFF;
+        color: black;
+        box-shadow: 0 3px 10px inset;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: block;
+        transition: background-color 0.2s;
+        -webkit-transition: background-color 0.2s;
+      }
+
+      .checkBall.active {
+        background-color: #ccfecc;
+      }
+    }
+
+    .zipMain {
+      overflow: hidden;
+      position: relative;
+      margin-left: 50px;
+
+      .zipNome {
+        text-decoration: none;
+        color: black;
+        font-size: 40px;
+        padding: 0.3em 0.3em 0.2em;
+      }
+
+      .zipFooter {
+        clear: both;
+        padding: 0.3em;
+
+        span {
+          padding: 0 1em;
+          font-size: 9px;
+        }
+
+      } 
+    }
+
+    .zipMenu {
+      background-color: rgba(137, 197, 47, 0.6);
+      border-radius: 10px 0 10px 0;
+      position: absolute;
+      bottom: -32px;
+      right: 0;
+      margin: 0;
+      transition: bottom 0.3s ease-in-out;
+      -webkit-transition: bottom 0.3s ease-in-out;
+
+      > li {
+        display: inline-block;
+      }
+      
+      .button {
+        background-color: transparent;
+        font-size: 12px;
+        border-radius: 10px;
+        color: #FFF;
+        font-weight: bold;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        color: #CCC;
+      }
+    }
+    
+    .zipMenu.active {
+      bottom: 0;
+    }
+    
+  }
 }
 
 
 
 @media all and (max-device-width: 880px) , (max-width: 880px) {
- 
+
   header {
     .logoBox {
       padding: 0;
-      
+
       a {
         margin-left: 0;
         width: 54px;
         background-size: 43px;
-        
+
         img {
           width: 35px;
           margin-left: 15px;
         }
       }
-      
+
       a.active {
         background-position-x: -39px;
       }
     }
   }
-  
+
   #sideMenu {
     left: -220px;
     transition: left 0.2s ease-in-out;
     -webkit-transition: left 0.2s ease-in-out; /* Safari */
   }
-  
+
   #sideMenu.active {
     left: 0;
   }
-  
+
   #backblock.active {
     height: 100%;
     opacity: 0.6;
   }
-  
+
   #content {
     margin: 0;
   }

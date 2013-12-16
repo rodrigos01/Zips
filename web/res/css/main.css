@@ -1717,15 +1717,29 @@ header .context .actionMenu { list-style: none; text-align: right; }
 header .context .actionMenu li { display: inline-block; }
 header .search { float: right; }
 
-#backblock { background-color: #000000; position: fixed; height: 0; width: 100%; opacity: 0; padding-top: 50px; transition: opacity 0.2s; -webkit-transition: opacity 0.2s; /* Safari */ }
+#backblock { background-color: #000000; position: fixed; height: 0; width: 100%; opacity: 0; padding-top: 50px; transition: opacity 0.2s; -webkit-transition: opacity 0.2s; /* Safari */ z-index: 1; }
 
-#sideMenu { background-color: #2a2a2a; width: 220px; font-size: 20px; padding-top: 50px; height: 100%; position: fixed; }
+#sideMenu { background-color: #2a2a2a; width: 220px; font-size: 20px; padding-top: 50px; height: 100%; position: fixed; z-index: 1; }
 #sideMenu ul li { padding: 0; }
 #sideMenu ul li a { color: #b3b3b3; display: block; padding: 0.5em 1em; transition: background-color 0.5s, color 0.5s; -webkit-transition: background-color 0.5s, color 0.5s; }
 #sideMenu ul li a:hover { background-color: #1A1A1A; color: #fffaff; }
 #sideMenu ul li a.active { color: yellowgreen; }
 
 #content { padding-top: 50px; margin-left: 220px; }
+#content .zipBox { background-color: #76b1b9; cursor: pointer; border-radius: 10px; position: relative; max-width: 880px; margin: 1em; overflow: hidden; }
+#content .zipBox .zipdate { color: #CCC; font-size: 9px; padding: 0.5em; }
+#content .zipBox .check { font-size: 40px; padding: 7.5px; float: left; }
+#content .zipBox .check .checkBall { background-color: #FFFFFF; color: black; box-shadow: 0 3px 10px inset; height: 35px; width: 35px; border-radius: 50%; cursor: pointer; display: block; transition: background-color 0.2s; -webkit-transition: background-color 0.2s; }
+#content .zipBox .check .checkBall.active { background-color: #ccfecc; }
+#content .zipBox .zipMain { overflow: hidden; position: relative; margin-left: 50px; }
+#content .zipBox .zipMain .zipNome { text-decoration: none; color: black; font-size: 40px; padding: 0.3em 0.3em 0.2em; }
+#content .zipBox .zipMain .zipFooter { clear: both; padding: 0.3em; }
+#content .zipBox .zipMain .zipFooter span { padding: 0 1em; font-size: 9px; }
+#content .zipBox .zipMenu { background-color: rgba(137, 197, 47, 0.6); border-radius: 10px 0 10px 0; position: absolute; bottom: -32px; right: 0; margin: 0; transition: bottom 0.3s ease-in-out; -webkit-transition: bottom 0.3s ease-in-out; }
+#content .zipBox .zipMenu > li { display: inline-block; }
+#content .zipBox .zipMenu .button { background-color: transparent; font-size: 12px; border-radius: 10px; color: #FFF; font-weight: bold; text-decoration: none; border: none; cursor: pointer; }
+#content .zipBox .zipMenu .button:hover { color: #CCC; }
+#content .zipBox .zipMenu.active { bottom: 0; }
 
 @media all and (max-device-width: 880px), (max-width: 880px) { header .logoBox { padding: 0; }
   header .logoBox a { margin-left: 0; width: 54px; background-size: 43px; }
