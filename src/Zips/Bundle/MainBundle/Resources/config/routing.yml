@@ -1,3 +1,27 @@
 zips_main_homepage:
     pattern:  /
     defaults: { _controller: ZipsMainBundle:Default:index }
+    
+login:
+    pattern : /login
+    defaults: { _controller: ZipsMainBundle:Default:login }
+    
+sair:
+    pattern : /sair
+    defaults: { _controller: ZipsMainBundle:Default:logout }
+    
+abertos:
+    pattern : /abertos
+    defaults: { _controller: ZipsMainBundle:Default:abertos }
+    
+finalizados:
+    pattern : /finalizados
+    defaults: { _controller: ZipsMainBundle:Default:finalizados }
+    
+meusZips:
+    pattern : /meusZips
+    defaults: { _controller: ZipsMainBundle:Default:meusZips }
+    
+configuracoes:
+    pattern : /configuracoes
+    defaults: { _controller: ZipsMainBundle:Default:configuracoes }

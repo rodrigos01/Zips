@@ -27,6 +27,7 @@
           <a href="#" gumby-trigger="#searchBox" class="toggle buttons-search" title="Pesquisar"></a>
         </div>
         <div class="context">
+          <span class="title">{% block pageTitle %}{{ pageTitle }}{% endblock %}</span>
           {% block context %}{% endblock %}
           <div id="searchBox">
             <input type="text" name="searchqueue" placeholder="Digite o nome do zip, projeto ou tarefa"/>
@@ -34,7 +35,7 @@
         </div>
         <div class="clearfix"></div>
       </header>
-      <div class="sideMenuTrigger" id="backblock"></div>
+      <div class="sideMenuTrigger" id="backblock" class="switch" gumby-on="click" gumby-trigger=" | .sideMenuTrigger"></div>
       <div class="sideMenuTrigger" id="sideMenu">
         <ul>
           {% block sideMenu %}
@@ -42,20 +43,20 @@
             <a href="{{ asset('') }}">Inicio</a>
           </li>
           <li>
-            <a href="{{ asset('opened') }}">Abertos</a>
+            <a href="{{ asset('abertos') }}">Abertos</a>
           </li>
           <li>
-            <a href="{{ asset('closed') }}">Finalizados</a>
+            <a href="{{ asset('finalizados') }}">Finalizados</a>
           </li>
           <li>
-            <a href="{{ asset('myZips') }}">Meus Zips</a>
+            <a href="{{ asset('meusZips') }}">Meus Zips</a>
           </li>
           {% endblock %}
           <li>
-            <a href="{{ asset('configurations') }}">Configurações</a>
+            <a href="{{ asset('configuracoes') }}">Configurações</a>
           </li>
           <li>
-            <a href="{{ asset('logout') }}">Sair</a>
+            <a href="{{ asset('sair') }}">Sair</a>
           </li>
         </ul>
       </div>

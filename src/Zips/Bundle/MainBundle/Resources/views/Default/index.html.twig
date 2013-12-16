@@ -1,5 +1,9 @@
 {% extends '::base.html.twig' %}
 
+{% block title %}
+  {{ parent() }} - {{ pageTitle }}
+{% endblock %}
+
 {% block context %}
   <ul class="actionMenu">
     <li>
@@ -9,4 +13,26 @@
 {% endblock %}
 
 {% block body %}
+  
+  {% for zip in zipList %}
+    <div class="zipBox">
+      <div class="zipdate">{{ zip.data }}</div>
+      <div class="check"><div class="checkBall"></div></div>
+      <div class="zipMain">
+        <a href="{{ zip.id }}" class="zipNome">{{ zip.nome }}</a>
+        <div class="zipFooter">
+          <span>{{ zip.status }}</span><span>{{ zip.ambienteAtual }} &gt; {{ zip.proximoAmbiente }}</span><span>{{ zip.site }}</span>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <ul class="zipMenu" style="display: none;">
+        <li><a href="Main/Download" class="button" onclick="Display.loadView('Main/Download', [{{ zip.id }}])">Download</a></li>
+        <li><a href="Desenvolvedores/EditarZip" class="button" onclick="">Editar Zip</a></li>
+        <li><a href="Desenvolvedores/EnviarRevisao" class="button" onclick="">Enviar Revisão</a></li>
+        <li><a href="javascript:void(0)" class="button" onclick="principal.apagarZip({{ zip.id }})">Apagar Zip</a></li>
+        <li><a href="javascript:void(0)" class="button" onclick="principal.marcarUpado({{ zip.id }})">Marcar como publicado</a></li>
+      </ul>
+    </div>
+  {% endfor %}
+  
 {% endblock %}

@@ -11,7 +11,7 @@ header {
   padding: 7.5px;
   padding-left: 0;
   border-bottom: #7a7a7a 3px solid;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   
   a {
@@ -48,10 +48,17 @@ header {
     }
   }
   
+  .title {
+    float: left;
+    color: #fffaff;
+    font-size: 28px;
+  }
+  
   .context {
     position: relative;
     margin: 0 50px;
     overflow: hidden;
+    height: 35px;
     
     #searchBox {
       position: absolute;
@@ -103,7 +110,7 @@ header {
 
 #backblock {
   background-color: #000000;
-  position: absolute;
+  position: fixed;
   height: 0;
   width: 100%;
   opacity: 0;
@@ -118,7 +125,7 @@ header {
   font-size: 20px;
   padding-top: 50px;
   height: 100%;
-  position: absolute;
+  position: fixed;
   
   ul {
     
@@ -129,12 +136,17 @@ header {
         color: #b3b3b3;
         display: block;
         padding: 0.5em 1em;
-        transition: background-color 0.5s;
-        -webkit-transition: background-color 0.5s;
+        transition: background-color 0.5s, color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s;
       }
       
       a:hover {
         background-color: #1A1A1A;
+        color: #fffaff
+      }
+      
+      a.active {
+        color: #9ACD32
       }
       
     }
