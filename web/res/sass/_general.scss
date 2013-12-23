@@ -4,6 +4,38 @@
   clear: both;
 }
 
+a.button {
+  width: 35px;
+  height: 35px;
+  display: block;
+  margin: 0 7.5px;
+  border-radius: 10px;
+}
+
+a.button.buttons-add {
+  background-color: #9acd32;
+}
+
+a.button.buttons-edit {
+  background-color: #234160;
+}
+
+a.button.buttons-revision {
+  background-color: #feec5c;
+}
+
+a.button.buttons-delete {
+  background-color: #ff634f;
+}
+
+a.button.buttons-checkUp, a.button.buttons-checkFin {
+  background-color: #9370df;
+}
+
+a.button.buttons-search {
+  background-color: #87ceef;
+}
+
 header {
   height: 50px;
   width:  100%;
@@ -14,25 +46,9 @@ header {
   position: fixed;
   z-index: 2;
 
-  a {
-    width: 35px;
-    height: 35px;
-    display: block;
-    margin: 0 7.5px;
-    border-radius: 10px;
-  }
-
   a:active {
     width: 34px;
     height: 34px;
-  }
-
-  a.buttons-add {
-    background-color: #9acd32;
-  }
-
-  a.buttons-search {
-    background-color: #87ceef;
   }
 
   .logoBox {
@@ -236,7 +252,6 @@ header {
       }
       
       .button {
-        background-color: transparent;
         font-size: 12px;
         border-radius: 10px;
         color: #FFF;

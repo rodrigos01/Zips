@@ -36,7 +36,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .icons-sprite, .icons-logo512, .icons-logo70 { background: url('../img/icons-s13d891303f.png') no-repeat; }
 
-.buttons-sprite, .buttons-add, .buttons-search { background: url('../img/buttons-s4deaf975f9.png') no-repeat; }
+.buttons-sprite, .buttons-add, .buttons-checkFin, .buttons-checkUp, .buttons-delete, .buttons-download, .buttons-edit, .buttons-revision, .buttons-search { background: url('../img/buttons-s70774b9bb1.png') no-repeat; }
 
 .misc-sprite, .misc-sandwich { background: url('../img/misc-s710cdb56b2.png') no-repeat; }
 
@@ -44,9 +44,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .icons-logo70 { background-position: 0 -512px; }
 
-.buttons-add { background-position: 0 -35px; }
+.buttons-add { background-position: 0 -245px; }
 
-.buttons-search { background-position: 0 0; }
+.buttons-checkFin { background-position: 0 -105px; }
+
+.buttons-checkUp { background-position: 0 0; }
+
+.buttons-delete { background-position: 0 -70px; }
+
+.buttons-download { background-position: 0 -210px; }
+
+.buttons-edit { background-position: 0 -175px; }
+
+.buttons-revision { background-position: 0 -35px; }
+
+.buttons-search { background-position: 0 -140px; }
 
 .misc-sandwich { background-position: 0 0; }
 
@@ -1700,11 +1712,22 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 
 .clearfix { clear: both; }
 
+a.button { width: 35px; height: 35px; display: block; margin: 0 7.5px; border-radius: 10px; }
+
+a.button.buttons-add { background-color: #9acd32; }
+
+a.button.buttons-edit { background-color: #234160; }
+
+a.button.buttons-revision { background-color: #feec5c; }
+
+a.button.buttons-delete { background-color: #ff634f; }
+
+a.button.buttons-checkUp, a.button.buttons-checkFin { background-color: #9370df; }
+
+a.button.buttons-search { background-color: #87ceef; }
+
 header { height: 50px; width: 100%; background-color: #1A1A1A; padding: 7.5px; padding-left: 0; border-bottom: #7a7a7a 3px solid; position: fixed; z-index: 2; }
-header a { width: 35px; height: 35px; display: block; margin: 0 7.5px; border-radius: 10px; }
 header a:active { width: 34px; height: 34px; }
-header a.buttons-add { background-color: #9acd32; }
-header a.buttons-search { background-color: #87ceef; }
 header .logoBox { padding-left: 7.5px; float: left; }
 header .logoBox a { margin-left: 0; background-size: 0px; background-position-x: -30px; transition: background-position-x 0.2s; -webkit-transition: background-position-x 0.2s; /* Safari */ }
 header .title { float: left; color: #fffaff; font-size: 28px; }
@@ -1737,7 +1760,7 @@ header .search { float: right; }
 #content .zipBox .zipMain .zipFooter span { padding: 0 1em; font-size: 9px; }
 #content .zipBox .zipMenu { background-color: rgba(137, 197, 47, 0.6); border-radius: 10px 0 10px 0; position: absolute; bottom: -32px; right: 0; margin: 0; transition: bottom 0.3s ease-in-out; -webkit-transition: bottom 0.3s ease-in-out; }
 #content .zipBox .zipMenu > li { display: inline-block; }
-#content .zipBox .zipMenu .button { background-color: transparent; font-size: 12px; border-radius: 10px; color: #FFF; font-weight: bold; text-decoration: none; border: none; cursor: pointer; }
+#content .zipBox .zipMenu .button { font-size: 12px; border-radius: 10px; color: #FFF; font-weight: bold; text-decoration: none; border: none; cursor: pointer; }
 #content .zipBox .zipMenu .button:hover { color: #CCC; }
 #content .zipBox .zipMenu.active { bottom: 0; }
 

@@ -20,12 +20,12 @@
     <body>
       <header>
         <div class="logoBox">
-          <a href="/" class="sideMenuTrigger misc-sandwich homebutton toggle" title="Home" gumby-trigger=".sideMenuTrigger">
+          <a href="/" class="sideMenuTrigger misc-sandwich homebutton button toggle" title="Home" gumby-trigger=".sideMenuTrigger">
             <img src="{{ asset(imgPath ~ 'homebutton.png') }}" gumby-retina alt="logo" />
           </a>
         </div>
         <div class="search">
-          <a href="#" gumby-trigger="#searchBox" class="toggle buttons-search" title="Pesquisar"></a>
+          <a href="#" gumby-trigger="#searchBox" class="button toggle buttons-search" title="Pesquisar"></a>
         </div>
         <div class="context">
           <span class="title">{% block pageTitle %}{{ pageTitle }}{% endblock %}</span>

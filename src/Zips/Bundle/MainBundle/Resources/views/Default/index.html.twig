@@ -7,7 +7,7 @@
 {% block context %}
   <ul class="actionMenu">
     <li>
-      <a href="#" class="buttons-add" title="Novo Zip"></a>
+      <a href="#" class="button buttons-add" title="Novo Zip"></a>
     </li>
   </ul>
 {% endblock %}
@@ -44,11 +44,11 @@
       </div>
       <div class="clearfix"></div>
       <ul class="zipMenu">
-        <li><a href="Main/Download" class="button" onclick="Display.loadView('Main/Download', [{{ zip.id }}])">Download</a></li>
-        <li><a href="Desenvolvedores/EditarZip" class="button" onclick="">Editar Zip</a></li>
-        <li><a href="Desenvolvedores/EnviarRevisao" class="button" onclick="">Enviar Revisão</a></li>
-        <li><a href="javascript:void(0)" class="button" onclick="principal.apagarZip({{ zip.id }})">Apagar Zip</a></li>
-        <li><a href="javascript:void(0)" class="button" onclick="principal.marcarUpado({{ zip.id }})">Marcar como publicado</a></li>
+        <li><a href="Main/Download" class="button buttons-download" onclick="Display.loadView('Main/Download', [{{ zip.id }}])"></a></li>
+        <li><a href="Desenvolvedores/EditarZip" class="button buttons-edit" onclick=""></a></li>
+        <li><a href="Desenvolvedores/EnviarRevisao" class="button buttons-revision" onclick=""></a></li>
+        <li><a href="javascript:void(0)" class="button buttons-delete" onclick="principal.apagarZip({{ zip.id }})"></a></li>
+        <li><a href="javascript:void(0)" class="button buttons-checkUp" onclick="principal.marcarUpado({{ zip.id }})"></a></li>
       </ul>
     </div>
   {% endfor %}
